@@ -1,0 +1,39 @@
+.mainContent {
+  margin-top: 3em;
+  height: 80vh;
+  // width:100%;
+}
+
+.content {
+  // margin:auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 40%;
+}
+
+.abbrv{
+    font-weight: 600;
+}
+
+.num{
+    padding-left:0.5em;
+    padding-right: 0.5em;
+}
+
+.data{
+    margin-top:1em
+}
+
+.btnContainer {
+  margin-top: 1.5em;
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 80%;
+  }
+}

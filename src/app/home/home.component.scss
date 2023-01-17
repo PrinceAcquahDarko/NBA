@@ -1,0 +1,91 @@
+.search {
+  width: 100%;
+  margin-top: 2em;
+
+  div {
+    width: 70%;
+    margin: auto;
+  }
+}
+
+.mainContent {
+  margin-top: 3em;
+}
+
+.mainContent > div {
+  width: 80%;
+  margin: auto;
+}
+
+.teamName {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  width: 100%;
+  margin-top: 0.5em;
+}
+
+.teamImage {
+  width: 150px;
+  height: 150px;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1px;
+}
+
+.textContainer {
+  width: 50%;
+}
+.teamImageContainer {
+  width: 50%;
+  padding-top: 1em;
+}
+
+.circle-container {
+  display: flex;
+  margin-top: 1em;
+  flex-wrap: wrap;
+}
+
+svg{
+  cursor:pointer;
+}
+
+.btnContainer {
+  margin-top: 1.5em;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  //   background-color: green;
+  margin-right: 0.2em;
+}
+
+@media only screen and (max-width: 1100px) {
+  .teamImage {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .teamImage {
+    width: 100px;
+    height: 100px;
+  }
+
+  .teamImageContainer {
+    padding-top: 2em;
+  }
+}

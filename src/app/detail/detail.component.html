@@ -1,0 +1,30 @@
+<main>
+  <header>
+    <div>NBA Score Tracking App</div>
+  </header>
+  <section class="mainContent">
+    <div class="content">
+      <div class="card">
+        <div class="card-body">
+          <div class="teamName">{{ data.name }} [{{ data.abbreviation }}]</div>
+          <div class="conference">
+            <small>{{ data.conference + "ern conference" }}</small>
+          </div>
+          <div class="straigthLine"></div>
+          <div class="results">Results of past 12 days</div>
+          <div class="data">
+            <div *ngFor="let games of data.data">
+              <span class="abbrv">{{games.home_team.abbreviation}}</span> <span class="num">{{games.home_team_score}}</span> -
+              <span class="num">{{games.visitor_team_score}}</span> <span class="abbrv">{{games.visitor_team.abbreviation}}</span>
+            </div>
+          </div>
+          <div class="btnContainer">
+            <button (click)="routeToHome()" type="button" class="btn btn-success">
+              << Back to all team stats
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

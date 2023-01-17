@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    // font-family: "Fjalla One", sans-serif;
+    font-family: "DM Sans", sans-serif;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  width: 100%;
+  margin-top: 1em;
+
+  div {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+.conference {
+  margin-top: 0.7em;
+}
+
+
+.straigthLine {
+  margin-top: 1em;
+  border-bottom: 1px solid gray;
+}
+
+.results {
+  margin-top: 1em;
+  font-size: 14px;
+}

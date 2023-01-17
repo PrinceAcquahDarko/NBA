@@ -1,0 +1,91 @@
+<main>
+  <header>
+    <div>NBA Score Tracking App</div>
+  </header>
+  <section class="search">
+    <div class="input-group">
+      <select
+        class="form-select"
+        id="inputGroupSelect04 teamInput"
+        aria-label="Example select with button addon"
+        name="team"
+        [(ngModel)]="team.id"
+      >
+        <option *ngFor="let t of teams" [value]="t.id">{{ t.name }}</option>
+      </select>
+      <button
+        (click)="submitTeam()"
+        class="btn btn-outline-secondary"
+        id="trackBtn"
+        type="button"
+      >
+        Track team
+      </button>
+    </div>
+  </section>
+  <section class="mainContent">
+    <div class="row">
+      <div *ngFor="let i of selectedTeams" class="col-lg-4 col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="teamName">
+              <div>{{ i.name }} [{{ i.abbreviation }}]</div>
+              <div (click)="close(i)">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-x-lg"
+                  viewBox="0 0 16 16"
+                  [id]="'remove' + i.abbreviation"
+                >
+                  <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="conference">
+              <small>{{ i.conference + "ern conference" }}</small>
+            </div>
+            <div class="straigthLine"></div>
+            <div class="imgContainer">
+              <div class="textContainer">
+                <div class="results">Results of past 12 days</div>
+                <div class="circle-container">
+                  <div
+                    class="circle"
+                    *ngFor="let wins of i.outcomes"
+                    [ngStyle]="{
+                      'background-color': wins === 'W' ? 'green' : 'red'
+                    }"
+                  >
+                    {{ wins }}
+                  </div>
+                </div>
+                <div class="results">Avg pts scored: {{ i.avg_scored }}</div>
+                <div class="results">
+                  Avg pts conceded: {{ i.avg_conceded }}
+                </div>
+              </div>
+              <div class="teamImageContainer">
+                <img class="teamImage" [src]="i.imgUrl" alt="logo" />
+              </div>
+            </div>
+            <div class="btnContainer">
+              <button
+                [id]="'results' + i.abbreviation"
+                (click)="results(i)"
+                type="button"
+                class="btn btn-success"
+              >
+                See game results >>>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
